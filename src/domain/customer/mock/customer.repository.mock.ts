@@ -5,11 +5,14 @@ export default class customerRepositoryMock implements CustomerRepositoryInterfa
   async create(entity: Customer): Promise<void> {
     console.log(`Customer ${entity.name} created.`)
   }
-  update(entity: Customer): Promise<void> {
-    throw new Error('Method not implemented.')
+  async update(entity: Customer): Promise<void> {
+    console.log(`Customer ${entity.name} was updated.`)
+
   }
-  find(id: string): Promise<Customer> {
-    throw new Error('Method not implemented.')
+  async find(id: string): Promise<Customer> {
+    console.log(`Customer ${id} was founded.`)
+    return new Customer(id, 'Lima')
+
   }
   findAll(): Promise<Customer[]> {
     throw new Error('Method not implemented.')

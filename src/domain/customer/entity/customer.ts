@@ -69,4 +69,12 @@ export default class Customer {
   set Address(address: Address) {
     this._address = address;
   }
+
+  toString() {
+    return {
+      id: this.id,
+      name: this.name,
+      address: this.Address.toString()
+    }
+  }
 }
